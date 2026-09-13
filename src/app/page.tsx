@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar } from "@/components/Navbar";
 import { ScrollySection } from "@/components/ScrollySection";
+import { About } from "@/components/About";
 import { Projects } from "@/components/Projects";
 import { RagInteractiveDemo } from "@/components/RagInteractiveDemo";
 import { Experience } from "@/components/Experience";
@@ -21,11 +22,12 @@ export default function Home() {
       <ScrollySection />
 
       {/* ── Content flows over the fixed canvas background (z-20) ── */}
-      <div className="relative z-20 bg-[#050811]/75 backdrop-blur-[3px] border-t border-cyan-500/20 shadow-[0_-20px_50px_rgba(0,0,0,0.8)]">
+      <div className="relative z-20 bg-[#0b1110]/92 backdrop-blur-[3px] border-t border-[#dce8d9]/10 shadow-[0_-20px_50px_rgba(0,0,0,0.35)]">
+        <About />
+        <Skills />
+        <Experience />
         <Projects />
         <RagInteractiveDemo />
-        <Experience />
-        <Skills />
         <Education />
         <ResumesSection />
         <Contact />
