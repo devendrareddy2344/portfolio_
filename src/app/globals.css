@@ -2,12 +2,14 @@
 
 @layer base {
   :root {
-    --background: #050811;
-    --foreground: #f1f5f9;
+    --background: #0b1110;
+    --foreground: #f1efe8;
+    --line: rgba(221, 235, 218, 0.14);
+    --accent: #d7f36b;
   }
 
   * {
-    border-color: #1e293b;
+    border-color: var(--line);
   }
 
   html {
@@ -15,10 +17,11 @@
   }
 
   body {
-    background-color: #050811;
-    color: #f1f5f9;
+    background-color: var(--background);
+    color: var(--foreground);
     overflow-x: hidden;
-    font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+    font-family: var(--font-space-grotesk), sans-serif;
+    background-image: radial-gradient(circle at 12% 8%, rgba(155, 214, 189, 0.09), transparent 27rem), linear-gradient(180deg, #0b1110 0%, #0d1513 52%, #0b1110 100%);
   }
 
   /* Custom subtle scrollbar */
@@ -33,7 +36,7 @@
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #00f0ff;
+    background: var(--accent);
   }
 }
 
@@ -48,17 +51,19 @@
 
 /* ── Glassmorphism card ─────────────────────────────────────────────────────── */
 .glass-card {
-  background: rgba(8, 13, 25, 0.6);
+  background: rgba(17, 26, 24, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-card:hover {
-  border-color: rgba(0, 240, 255, 0.3);
-  box-shadow: 0 0 40px -12px rgba(0, 240, 255, 0.2);
+  border-color: rgba(215, 243, 107, 0.5);
+  box-shadow: 0 18px 50px -30px rgba(215, 243, 107, 0.35);
 }
+
+.section-shell { border-top: 1px solid var(--line); }
 
 /* ── Noise texture overlay for depth ────────────────────────────────────────── */
 .noise-overlay::before {

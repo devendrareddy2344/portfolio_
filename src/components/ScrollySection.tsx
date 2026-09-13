@@ -12,7 +12,7 @@ export const ScrollySection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div id="hero" ref={containerRef} className="relative w-full" style={{ height: "400vh" }}>
+    <div id="hero" ref={containerRef} className="relative w-full overflow-x-clip h-[150svh] md:h-[175vh]">
       {/* Canvas is pinned in the background */}
       <ScrollyCanvas containerRef={containerRef} />
 

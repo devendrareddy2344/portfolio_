@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import { Terminal, FileDown, Menu, X } from "lucide-react";
 import { SoundToggle } from "./SoundToggle";
 import { sound } from "@/lib/sound";
@@ -20,11 +19,10 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "#home" },
-    { name: "Projects", href: "#projects" },
+    { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
-    { name: "Education", href: "#education" },
-    { name: "Resumes", href: "#resumes" },
+    { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -72,8 +70,8 @@ export const Navbar = () => {
                 <span className="font-bold text-slate-100 tracking-tight text-sm sm:text-base group-hover:text-cyan-300 transition-colors">
                   Devendra Reddy
                 </span>
-                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-medium bg-cyan-950/60 text-cyan-300 border border-cyan-500/30">
-                  AI Systems
+                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-medium bg-[#d7f36b]/10 text-[#d7f36b] border border-[#d7f36b]/30">
+                  AI / ML
                 </span>
               </div>
             </div>
@@ -134,7 +132,9 @@ export const Navbar = () => {
                 setMobileMenuOpen(!mobileMenuOpen);
               }}
               className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
-              aria-label="Toggle Navigation Menu"
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -143,7 +143,7 @@ export const Navbar = () => {
 
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-3 p-4 rounded-xl bg-[#090d18] border border-slate-800 shadow-2xl space-y-2.5">
+          <div id="mobile-navigation" className="md:hidden mt-3 p-4 rounded-xl bg-[#111a18] border border-[#dce8d9]/10 shadow-2xl space-y-2.5">
             {navLinks.map((link) => (
               <a
                 key={link.name}
